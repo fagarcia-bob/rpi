@@ -1,31 +1,26 @@
 {
-    "name": "Raspberry Pi Dev",
+    "name": "Raspberry Pi",
 
     "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
     "features": {
         "ghcr.io/devcontainers/features/python:1": {
             "version": "3.12"
-        },
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        }
     },
 
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
-                "ms-python.vscode-pylance",
-                "ms-azuretools.vscode-docker",
-                "redhat.vscode-yaml"
+                "ms-python.vscode-pylance"
             ]
         }
     },
 
     "remoteUser": "vscode",
 
-    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y openssh-client sshpass rsync",
-
-    "forwardPorts": [],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y openssh-client rsync",
 
     "remoteEnv": {
         "PYTHONDONTWRITEBYTECODE": "1"
